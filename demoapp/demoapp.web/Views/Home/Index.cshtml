@@ -2,66 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Azure Class Welcome</title>
   <style>
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #007FFF, #00C6FF);
       height: 100vh;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #fff;
-      animation: backgroundMove 10s infinite alternate;
-    }
-
-    @keyframes backgroundMove {
-      0% { background-position: left; }
-      100% { background-position: right; }
+      color: white;
     }
 
     .card {
       background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(15px);
-      border-radius: 20px;
-      padding: 50px 60px;
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 40px 60px;
       text-align: center;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+      max-width: 400px;
     }
 
     .card h1 {
-      font-size: 2.8rem;
-      margin-bottom: 20px;
-      color: #ffffff;
+      font-size: 2.5rem;
+      margin: 0 0 20px;
     }
 
     .card p {
-      font-size: 1.2rem;
-      color: #e0e0e0;
-    }
-
-    .glow {
-      text-shadow: 0 0 8px #00ffff, 0 0 16px #00ffff;
+      font-size: 1.1rem;
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1 class="glow">Hello everyone</h1>
-    <p>Welcome to the Azure class — let's create something amazing in the cloud! ☁️✨</p>
+    <h1>Hello everyone</h1>
+    <p>Welcome to the Azure class! Let's build the cloud, one step at a time.</p>
   </div>
 </body>
 </html>
