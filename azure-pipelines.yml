@@ -1,45 +1,18 @@
+#sample yml 
 trigger:
-  branches:
-    include:
-      - main
-
-variables:
-  buildConfiguration: 'Release'
+  none
+pool:
+  name: newpool
+  demands:
+    -agent.name -equals MS-Hosted
 
 stages:
-- stage: Build
-  jobs:
-  - job: Build
-    pool:
-      vmImage: 'ubuntu-latest'
-    steps:
-    - task: UseDotNet@2
-      inputs:
-        packageType: 'sdk'
-        version: '6.x'
-        installationPath: $(Agent.ToolsDirectory)/dotnet
-    - script: |
-        dotnet build --configuration $(buildConfiguration)
-      displayName: 'Build the project'
-
-- stage: Test
-  jobs:
-  - job: Test
-    pool:
-      vmImage: 'ubuntu-latest'
-    steps:
-    - script: |
-        dotnet test --configuration $(buildConfiguration)
-      displayName: 'Run Tests'
-
-- stage: Deploy
-  dependsOn: Test
-  condition: succeeded()
-  jobs:
-  - job: Deploy
-    pool:
-      vmImage: 'ubuntu-latest'
-    steps:
-    - script: |
-        echo "Deploying the application"
-      displayName: 'Deploy to production'
+  - stage: complile
+    displayName: "complile"
+    jobs:
+      - job:
+        steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    azureSubscription: 'practice'
+    command: 'build'
